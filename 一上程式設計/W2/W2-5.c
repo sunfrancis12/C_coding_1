@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int height,lengh,width,inchs;
+    int height,lenght,width,inchs;
     int volume = height*lenght*width;
     int weight = (volume + 99)/100;
 

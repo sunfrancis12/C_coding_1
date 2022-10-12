@@ -1,0 +1,6 @@
+#include<stdio.h>
+
+int main(){
+    printf("(a = (b += (((c++) - d) + ((--e) / (-f)))))");
+    return 0;
+}
