@@ -6,6 +6,7 @@ int main(){
     int column[4]={0};
     int diagonal[2]={0};
 
+
     for(int i=0;i<4;i++){
         for(int j=0;j<4;j++){
         scanf("%d",&num[i][j]);
