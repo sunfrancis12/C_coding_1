@@ -4,15 +4,14 @@ int main(){
     int i=0;
     int n=0;
 
-    printf("Enter a nonnegative integer: ");
-    scanf("%d",&n);
+    printf("Enter integers (0 to terminate): ");
 
     do{
-        n /= 10;
-        i += 1;
+        scanf("%d",&n);
+        i += n;
     }while(n!=0);
 
-    printf("The number has %d digit(s).",i);
+    printf("The sum is: %d",i);
 
     return 0;
 }

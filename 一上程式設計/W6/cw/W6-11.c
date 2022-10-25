@@ -1,14 +1,11 @@
 #include<stdio.h>
 int main(){
     int num=0;
+    printf("Enter number of entries in table: ");
     scanf("%d",&num);
 
     for(int i=1;i<=num;i++){
-        for(int j=1;j<=i;j++){
-            printf("*");
-        }
-        if(i==num) break;;
-        printf("\n");
+        printf("%10d%10d\n",i,i*i);
     }
 
     return 0;
