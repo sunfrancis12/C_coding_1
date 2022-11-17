@@ -35,7 +35,7 @@ int main(void)
     suit = mysuit[count_suit]% NUM_SUITS;    /* x/4picks a random suit */
     rank = myrank[count_rank] % NUM_RANKS;    /*   x/13 3  picks a random rank */
 
-    printf("%d,%d\n",rank,suit);
+
 
     count_suit++;
     count_rank++;
