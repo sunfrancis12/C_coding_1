@@ -1,3 +1,17 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "cmath": "c",
+        "cstdarg": "c",
+        "cstdio": "c",
+        "cstdlib": "c",
+        "cwchar": "c",
+        "cwctype": "c",
+        "type_traits": "c",
+        "limits": "c",
+        "*.tcc": "c",
+        "cstdbool": "c",
+        "cstdint": "c",
+        "typeinfo": "c"
+    }
 }

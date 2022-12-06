@@ -16,7 +16,7 @@ int main(){
         c[k] = b[j];
         k++;
     }
-
+    
     for (int j = 1; j <=k; j++){
         if(c[j]==' '|| j==k){
             z=j-1;
