@@ -16,6 +16,9 @@ int main(){
         c[k] = b[j];
         k++;
     }
+
+    puts(c);
+    printf("\n");
     
     for (int j = 1; j <=k; j++){
         if(c[j]==' '|| j==k){

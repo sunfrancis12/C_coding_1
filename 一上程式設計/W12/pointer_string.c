@@ -11,9 +11,5 @@ int main(){
     puts(str);
     printf("\n");
 
-    for ( i = p; i < p + sizeof(p); i++){
-        printf("%c\n",&i);
-    }
-    
     
 }

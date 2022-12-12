@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string>
 int main(){
     int a[10], *p;
 
@@ -15,7 +16,6 @@ int main(){
         printf("%d",*p);
    }
    
-
     
     
 }

@@ -10,6 +10,9 @@ int main(){
         temp = a + b;
         a = b;
         b = temp;
+        if(i>=4){
+            
+        }
     }
 
     printf("%d",temp);
