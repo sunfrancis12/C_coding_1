@@ -12,6 +12,8 @@
         "*.tcc": "c",
         "cstdbool": "c",
         "cstdint": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "random": "c",
+        "stdbool.h": "c"
     }
 }
