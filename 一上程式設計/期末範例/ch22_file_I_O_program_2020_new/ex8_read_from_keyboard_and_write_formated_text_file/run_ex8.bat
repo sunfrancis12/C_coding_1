@@ -1,0 +1,4 @@
+gcc ex8_read_from_keyboard_and_write_formated_text_file.c
+pause
+a.exe
+pause
