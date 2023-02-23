@@ -1,13 +1,15 @@
 #include"first.h"
 #include<iostream>
-
+#warning
 first::first(){
     
 }
 
 first::first(int x,int y){
-    set_a(x);
-    set_b(y);
+    //set_a(x);
+    //set_b(y);
+    a = x;
+    b = y;
 }
 
 int first::sum(){
