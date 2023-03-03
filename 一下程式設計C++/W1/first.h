@@ -1,7 +1,6 @@
 class first{
 
     public:
-        int a,b;
         first();
         first(int,int);
 
@@ -13,5 +12,7 @@ class first{
         int get_a(int);
         int get_b(int);
 
+    private:
+        int a,b;
             
 };
