@@ -5,7 +5,7 @@ using namespace std;
 class Date{
 
     public:
-        Date(int a,int b,int c){
+        explicit Date(int a,int b,int c){
             set_year(a);
             set_month(b);
             set_day(c);

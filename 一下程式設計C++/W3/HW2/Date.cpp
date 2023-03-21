@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-    Date date{2003,12,12};
+    Date date(2003,12,12);
 
     date.display();
 }
