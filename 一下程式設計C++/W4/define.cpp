@@ -6,6 +6,11 @@
 #endif
 
 int main(){
+
+	int b=0;
+	int &na = b; //ref
+	int *p = &b; //pointer
+
 	#if (a == 1)
 		printf("a == 1\n");
     

@@ -2,6 +2,7 @@
 // Recursive function factorial.
 #include <iostream>
 #include <iomanip>
+#include<random>
 using namespace std;
 
 unsigned long factorial(unsigned long); // function prototype

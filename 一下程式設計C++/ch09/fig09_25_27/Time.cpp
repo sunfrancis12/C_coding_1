@@ -6,6 +6,7 @@
 #include "Time.h" // Time class definition
 using namespace std;
 
+
 // constructor function to initialize private data;
 // calls member function setTime to set variables;
 // default values are 0 (see class definition)
@@ -60,6 +61,9 @@ Time& Time::setSecond(int s) { // note Time& return
 // get hour value
 unsigned int Time::getHour() const { return hour; }
 
+
+
+
 // get minute value
 unsigned int Time::getMinute() const { return minute; }
 
@@ -82,6 +86,7 @@ string Time::toStandardString() const {
       << getSecond() << (hour < 12 ? " AM" : " PM");
    return output.str();
 }
+
 
 
 /**************************************************************************
