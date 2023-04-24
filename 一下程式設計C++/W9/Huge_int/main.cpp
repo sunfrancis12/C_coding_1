@@ -12,6 +12,7 @@ int main() {
    HugeInteger n5;
    HugeInteger n6{8888};
    HugeInteger n7{"999"};
+   HugeInteger n8{"25000"};
 
    cout << "n1 is " << n1 << "\nn2 is " << n2
       << "\nn3 is " << n3 << "\nn4 is " << n4
@@ -31,6 +32,8 @@ int main() {
    //n5 = n1*n4;
    //cout<<n5<<endl;
    n5 = n6 * n7;
+   cout<<n5<<endl;
+   n5 = n6 / n8;
    cout<<n5<<endl;
 
    /*

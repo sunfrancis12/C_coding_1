@@ -1,18 +1,36 @@
-// Fig. 9.17: fig09_17.cpp
-// const objects and const member functions.
-#include "Time.h" // include Time class definition
+// Fig. 9.12: Time.cpp
+// Time class member-function definitions.
+#include <stdexcept>
+#include "Time.h" // include definition of class Time
+using namespace std;
 
-int main() {
-   Time wakeUp{6, 45, 0}; // non-constant object
-   Time noon{12, 0, 0}; // constant object
+// set values of hour, minute and second
+void Time::setTime(int h, int m, int s) {
+   // validate hour, minute and second
+   if ((h >= 0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60)) {
+      hour = h;
+      minute = m;
+      second = s;
+   }
+   else {
+      throw invalid_argument(
+         "hour, minute and/or second was out of range");
+   }
+}
 
-                              // OBJECT      MEMBER FUNCTION
-   wakeUp.setHour(18);       // non-const   non-const
-   noon.setHour(12);         // const       non-const
-   wakeUp.getHour();         // non-const   const
-   noon.getMinute();         // const       const
-   noon.toUniversalString(); // const       const
-   noon.toStandardString();  // const       non-const
+// return hour value
+unsigned int Time::getHour() const { return hour; }
+
+// poor practice: returning a reference to a private data member.
+unsigned int& Time::badSetHour(int hh) {
+   if (hh >= 0 && hh < 24) {
+      hour = hh;
+   }
+   else {
+      throw invalid_argument("hour must be 0-23");
+   }
+
+   return hour; // dangerous reference return                    
 }
 
 

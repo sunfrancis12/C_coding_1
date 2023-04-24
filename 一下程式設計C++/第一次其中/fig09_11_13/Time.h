@@ -1,19 +1,23 @@
-// Fig. 9.17: fig09_17.cpp
-// const objects and const member functions.
-#include "Time.h" // include Time class definition
+// Fig. 9.11: Time.h
+// Time class declaration.
+// Member functions defined in Time.cpp
 
-int main() {
-   Time wakeUp{6, 45, 0}; // non-constant object
-   Time noon{12, 0, 0}; // constant object
+// prevent multiple inclusions of header
+#ifndef TIME_H 
+#define TIME_H 
 
-                              // OBJECT      MEMBER FUNCTION
-   wakeUp.setHour(18);       // non-const   non-const
-   noon.setHour(12);         // const       non-const
-   wakeUp.getHour();         // non-const   const
-   noon.getMinute();         // const       const
-   noon.toUniversalString(); // const       const
-   noon.toStandardString();  // const       non-const
-}
+class Time {
+public:
+   void setTime(int, int, int);
+   unsigned int getHour() const;
+   unsigned int& badSetHour(int); // dangerous reference return
+private:
+   unsigned int hour{0};
+   unsigned int minute{0};
+   unsigned int second{0};
+};
+
+#endif
 
 
 /**************************************************************************

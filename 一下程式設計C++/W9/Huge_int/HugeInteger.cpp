@@ -115,11 +115,37 @@ HugeInteger HugeInteger::operator*(const HugeInteger& op2){
 }
 
 HugeInteger HugeInteger::operator*(int op2){
-   return *this + HugeInteger(op2);
+   return *this * HugeInteger(op2);
 }
 
 HugeInteger HugeInteger::operator*(const string& op2){
-   return *this + HugeInteger(op2);
+   return *this * HugeInteger(op2);
+}
+
+//除法
+HugeInteger HugeInteger::operator/(const HugeInteger& op2){
+
+   HugeInteger temp{1}; // temporary result
+
+   int i = 0;
+
+   while(true){
+      temp = HugeInteger(i) * op2;
+      if(temp>=*this) break;
+      i++;
+   }
+
+   i = i-1;
+
+   return HugeInteger(i); // return copy of temporary object
+}
+
+HugeInteger HugeInteger::operator/(int op2){
+   return *this / HugeInteger(op2);
+}
+
+HugeInteger HugeInteger::operator/(const string& op2){
+   return *this / HugeInteger(op2);
 }
 
 

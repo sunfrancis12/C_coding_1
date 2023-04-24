@@ -1,20 +1,26 @@
-// Fig. 9.17: fig09_17.cpp
-// const objects and const member functions.
-#include "Time.h" // include Time class definition
+// Fig. 9.18: Date.h 
+// Date class definition; Member functions defined in Date.cpp
+#include <string>
 
-int main() {
-   Time wakeUp{6, 45, 0}; // non-constant object
-   Time noon{12, 0, 0}; // constant object
+#ifndef DATE_H
+#define DATE_H
 
-                              // OBJECT      MEMBER FUNCTION
-   wakeUp.setHour(18);       // non-const   non-const
-   noon.setHour(12);         // const       non-const
-   wakeUp.getHour();         // non-const   const
-   noon.getMinute();         // const       const
-   noon.toUniversalString(); // const       const
-   noon.toStandardString();  // const       non-const
-}
+class Date {
+public:
+   static const unsigned int monthsPerYear{12}; // months in a year
+   explicit Date(unsigned int = 1, unsigned int = 1, unsigned int = 1900);
+   std::string toString() const; // date string in month/day/year format
+   ~Date(); // provided to confirm destruction order
+private:
+   unsigned int month; // 1-12 (January-December)
+   unsigned int day; // 1-31 based on month
+   unsigned int year; // any year
 
+   // utility function to check if day is proper for month and year
+   unsigned int checkDay(int) const;
+};
+
+#endif
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *

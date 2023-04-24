@@ -1,18 +1,29 @@
-// Fig. 9.17: fig09_17.cpp
-// const objects and const member functions.
-#include "Time.h" // include Time class definition
+// Fig. 9.13: fig09_13.cpp
+// Demonstrating a public member function that
+// returns a reference to a private data member.
+#include <iostream>
+#include "Time.h" // include definition of class Time
+using namespace std;
 
 int main() {
-   Time wakeUp{6, 45, 0}; // non-constant object
-   Time noon{12, 0, 0}; // constant object
+   Time t; // create Time object
 
-                              // OBJECT      MEMBER FUNCTION
-   wakeUp.setHour(18);       // non-const   non-const
-   noon.setHour(12);         // const       non-const
-   wakeUp.getHour();         // non-const   const
-   noon.getMinute();         // const       const
-   noon.toUniversalString(); // const       const
-   noon.toStandardString();  // const       non-const
+   // initialize hourRef with the reference returned by badSetHour
+   unsigned int& hourRef{t.badSetHour(20)}; // 20 is a valid hour       
+
+   cout << "Valid hour before modification: " << hourRef;
+   hourRef = 30; // use hourRef to set invalid value in Time object t
+   cout << "\nInvalid hour after modification: " << t.getHour();
+
+   // Dangerous: Function call that returns                        
+   // a reference can be used as an lvalue!                        
+   t.badSetHour(12) = 74; // assign another invalid value to hour
+
+   cout << "\n\n*************************************************\n"
+      << "POOR PROGRAMMING PRACTICE!!!!!!!!\n"
+      << "t.badSetHour(12) as an lvalue, invalid hour: "
+      << t.getHour()
+      << "\n*************************************************" << endl;
 }
 
 

@@ -26,6 +26,11 @@ public:
    HugeInteger operator*(int);
    HugeInteger operator*(const std::string&);
 
+   //除法
+   HugeInteger operator/(const HugeInteger&);
+   HugeInteger operator/(int);
+   HugeInteger operator/(const std::string&);
+
    //大於
    bool operator>(const HugeInteger&);
    bool operator>(int);

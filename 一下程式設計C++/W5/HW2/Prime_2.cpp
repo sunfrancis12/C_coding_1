@@ -30,6 +30,9 @@ int main(){
     for (int i = 3; i <= 10000; i++){
 
         Prime(i,p,c);
+        //*p = p
+        //p = &n
+        //*p = &n
 
         if(count%11==0){
             count = 1;

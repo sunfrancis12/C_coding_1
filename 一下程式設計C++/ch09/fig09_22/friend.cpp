@@ -35,7 +35,7 @@ void setX( Count &c, int val )
 int main()
 {
    Count counter; // create Count object
-   Count *p = &counter;
+   Count *p = &counter; 
 
    cout<<p<<"   "<<&counter<<endl;
    cout << "counter.x after instantiation: ";
