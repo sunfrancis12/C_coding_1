@@ -12,6 +12,16 @@ Polynomial::Polynomial(int num=0, int x=0){
     if(x>max) max = x; //最高次方
 };
 
+Polynomial::~Polynomial(){
+
+};
+
+//加入變數
+void Polynomial::addTerm(int x,int y){
+    Polynomial temp{x,y};
+    *this += temp;
+}
+
 Polynomial Polynomial::operator+(Polynomial &num){
     Polynomial temp;
     int big;

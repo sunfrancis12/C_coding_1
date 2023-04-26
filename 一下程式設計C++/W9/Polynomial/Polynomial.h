@@ -12,6 +12,8 @@ public:
 
     Polynomial(int,int);
 
+    void addTerm(int,int);
+
     Polynomial operator+(Polynomial&);
     Polynomial operator-(Polynomial&);
     Polynomial operator*(Polynomial&);
@@ -20,6 +22,7 @@ public:
     void operator-=(Polynomial&);
     void operator*=(Polynomial&);
 
+    ~Polynomial();
 
 private:
     array<int, digits> integer{}; // default init to 0s
