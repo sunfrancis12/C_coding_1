@@ -29,4 +29,7 @@ int main(){
 
     n5.addTerm(3,3);
     cout<<"n5 + 3x^3 =>"<<n5<<endl;
+
+    n1 = n5;
+    cout<<n1<<endl;
 }
