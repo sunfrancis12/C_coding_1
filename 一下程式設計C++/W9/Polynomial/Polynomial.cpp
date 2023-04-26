@@ -19,7 +19,6 @@ Polynomial::~Polynomial(){
 //加入變數
 void Polynomial::addTerm(int x,int y){
     Polynomial temp{x,y};
-    if(y>max) temp.max = y;
     *this += temp;
 }
 
