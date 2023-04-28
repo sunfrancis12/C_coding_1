@@ -31,9 +31,13 @@ public:
 
    double earnings() const; // calculate earnings
    void print() const; // print BasePlusCommissionEmployee object
+
+
+
 private:
    double baseSalary; // base salary
    CommissionEmployee commissionEmployee; // composed object 
+
 }; // end class BasePlusCommissionEmployee
 
 #endif

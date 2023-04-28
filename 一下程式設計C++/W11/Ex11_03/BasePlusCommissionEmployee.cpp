@@ -6,19 +6,16 @@
 
 // BasePlusCommissionEmployee class definition
 #include "BasePlusCommissionEmployee.h"
+#include "CommissionEmployee.h"
 using namespace std;
 
+// constructor uses member initializer list to pass initializer 
 BasePlusCommissionEmployee::BasePlusCommissionEmployee(
    const string& first, const string& last, const string& ssn,
-   double sales, double rate, double salary){
-
-
-   commissionEmployee.setFirstName(first);
-   commissionEmployee.setLastName(last);
-   commissionEmployee.setSocialSecurityNumber(ssn);
-   commissionEmployee.setGrossSales(sales);
-   commissionEmployee.setCommissionRate(rate);
-
+   double sales, double rate, double salary)
+   : commissionEmployee(first,last,ssn,sales,rate)
+   {
+   
    setBaseSalary(salary); // validate and store base salary
 };
 
@@ -79,6 +76,10 @@ double BasePlusCommissionEmployee::getBaseSalary() const {
 // calculate earnings
 double BasePlusCommissionEmployee::earnings() const {
    return getBaseSalary() + commissionEmployee.earnings();
+}
+
+void BasePlusCommissionEmployee:: print() const{
+   commissionEmployee.print();
 }
 
 
