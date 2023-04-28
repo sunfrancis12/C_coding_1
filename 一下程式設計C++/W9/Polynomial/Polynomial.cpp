@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Polynomial::Polynomial(int num=0, int x=0){
+Polynomial::Polynomial(int num=0, int x=0){ 
     // x是次方, num是係數
     integer[x] += num;
 
@@ -89,7 +89,9 @@ void Polynomial::operator+=(Polynomial &num){
     temp  = *this + num;
     *this = temp;
     return;
-};
+}; 
+
+
 
 void Polynomial::operator-=(Polynomial &num){
     Polynomial temp;

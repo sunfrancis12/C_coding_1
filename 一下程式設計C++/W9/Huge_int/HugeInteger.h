@@ -46,6 +46,7 @@ public:
    bool operator==(int);
    bool operator==(const std::string&);
 
+
    //不等於
    bool operator!=(const HugeInteger&);
    bool operator!=(int);
