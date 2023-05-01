@@ -10,7 +10,6 @@ class CommissionEmployee
 public:
    CommissionEmployee( const std::string &, const std::string &, 
       const std::string &, double = 0.0, double = 0.0 );
-   
    void setFirstName( const std::string & ); // set first name
    std::string getFirstName() const; // return first name
 
