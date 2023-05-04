@@ -43,7 +43,7 @@ int main() {
       cout << "earned $" << employeePtr->earnings() << "\n\n";
    }
 
-   // release objects pointed to by vector’s elements
+   // release objects pointed to by vectorï¿½s elements
    for (const Employee* employeePtr : employees) {
       // output class name                        
       cout << "deleting object of "
