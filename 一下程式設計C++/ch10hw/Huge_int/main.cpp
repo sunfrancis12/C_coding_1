@@ -10,7 +10,7 @@ int main() {
    HugeInteger n3{"99999999999999999999999999999"};
    HugeInteger n4{"1"};
    HugeInteger n5;
-   HugeInteger n6{8888};
+   HugeInteger n6{888};
    HugeInteger n7{"999"};
    HugeInteger n8{"25000"};
 

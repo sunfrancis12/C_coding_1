@@ -74,9 +74,43 @@ HugeInteger HugeInteger::operator*(const HugeInteger& op2){
    int num = 0;
    int carry = 0;
 
-   for(HugeInteger i{1}; i <= op2;i = i + 1 ){
-      temp = temp + *this;
+   //比大小
+   if(*this > HugeInteger(op2)){
+      a = *this;
+      b = op2;
+   }else{
+      b = *this;
+      a = op2;
    }
+
+   //乘法直式
+   for (int i = 0; i < b.length; i++) {
+         for(int j = 0; j <=a.length; j++){
+            num = a.integer[39-j] * b.integer[39-i];
+            temp.integer[39-(j+i)] = temp.integer[39-(j+i)] + num%10 + carry;
+
+            // determine whether to carry
+            if (num > 9) {
+               carry = num/10;
+            }else { // no carry 
+               carry = 0;
+            }
+         }
+      }
+
+      carry = 0;
+
+      for (int i = 39; i>=0; i--){
+         temp.integer[i] = temp.integer[i] + carry;
+         
+         //加法 檢查進位
+         if(temp.integer[i]>9){
+            carry = temp.integer[i]/10;
+            temp.integer[i]%=10;
+         }else{
+            carry = 0;
+         }
+      }
 
    return temp; // return copy of temporary object
 }
