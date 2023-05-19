@@ -1,31 +1,22 @@
-// Fig. 13.18: Fig13_18.cpp
-// Stream manipulators boolalpha and noboolalpha.
-#include <iostream>
+// Exercise 13.16 Solution: Complex.h
+#ifndef COMPLEX_H
+#define COMPLEX_H
+
+#include <iostream> 
 using namespace std;
 
-int main() {
-   bool booleanValue{true};
+class Complex {
+   // overloaded input and output operators
+   friend ostream &operator<<(ostream&, const Complex&);
+   friend istream &operator>>(istream&, Complex&);
+public:
+   Complex(); // constructor
+private:
+   int real; // hold real part of complex number
+   int imaginary; // hold imaginary part of complex number
+}; 
 
-   // display default true booleanValue
-   cout << "booleanValue is " << booleanValue;
-
-   // display booleanValue after using boolalpha
-   cout << "\nbooleanValue (after using boolalpha) is "
-      << boolalpha << booleanValue;
-
-   cout << "\n\nswitch booleanValue and use noboolalpha\n";
-   booleanValue = false; // change booleanValue
-   cout << noboolalpha; // use noboolalpha
-
-   // display default false booleanValue after using noboolalpha
-   cout << "\nbooleanValue is " << booleanValue;
-   
-
-   // display booleanValue after using boolalpha again
-   cout << "\nbooleanValue (after using boolalpha) is "
-      << boolalpha << booleanValue << endl;
-}
-
+#endif
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *

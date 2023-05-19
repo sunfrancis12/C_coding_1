@@ -67,7 +67,7 @@ HugeInteger HugeInteger::operator+(const string& op2) const {
 //乘法
 HugeInteger HugeInteger::operator*(const HugeInteger& op2){
 
-   HugeInteger temp; // temporary result
+   HugeInteger temp; // temporary result             
 
    for(HugeInteger i{1}; i <= op2;i = i + 1 ){
       temp = temp + *this;

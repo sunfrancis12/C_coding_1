@@ -10,10 +10,11 @@ int main() {
    cout << "Enter a sentence:\n";
    cin.width(5); // input only 5 characters from sentence
 
+   
    // set field width, then display characters based on that width 
    while (cin >> sentence) {
       cout.width(widthValue++);
-      cout << sentence << "\n";
+      cout << sentence <<"\n";
       cin.width(5); // input 5 more characters from sentence
    }
 }

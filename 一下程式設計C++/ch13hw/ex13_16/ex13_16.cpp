@@ -1,31 +1,23 @@
-// Fig. 13.18: Fig13_18.cpp
-// Stream manipulators boolalpha and noboolalpha.
-#include <iostream>
+// Exercise 13.16 Solution: Ex13_16.cpp
+// Complex test program.
+#include <iostream> 
+#include "Complex.h"
 using namespace std;
 
 int main() {
-   bool booleanValue{true};
+   Complex complex; // create Complex object
 
-   // display default true booleanValue
-   cout << "booleanValue is " << booleanValue;
+   // ask user to enter complex number
+   cout << "Input a complex number in the form A + Bi:\n";
+   cin >> complex; // store complex number
 
-   // display booleanValue after using boolalpha
-   cout << "\nbooleanValue (after using boolalpha) is "
-      << boolalpha << booleanValue;
-
-   cout << "\n\nswitch booleanValue and use noboolalpha\n";
-   booleanValue = false; // change booleanValue
-   cout << noboolalpha; // use noboolalpha
-
-   // display default false booleanValue after using noboolalpha
-   cout << "\nbooleanValue is " << booleanValue;
-   
-
-   // display booleanValue after using boolalpha again
-   cout << "\nbooleanValue (after using boolalpha) is "
-      << boolalpha << booleanValue << endl;
-}
-
+   if (!cin.fail()) { // display complex number entered by user if valid
+      cout << "Complex number entered was:\n" << complex << endl;
+   }
+   else {
+      cout << "Invalid Data Entered\n";
+   }
+} 
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *

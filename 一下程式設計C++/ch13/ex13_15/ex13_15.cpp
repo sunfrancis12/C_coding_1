@@ -1,31 +1,23 @@
-// Fig. 13.18: Fig13_18.cpp
-// Stream manipulators boolalpha and noboolalpha.
+// Exercise 13.15 Solution: Ex13_15.cpp
+// Point test program.
 #include <iostream>
+#include "Point.h"
 using namespace std;
 
 int main() {
-   bool booleanValue{true};
+   Point pt; // create point object
 
-   // display default true booleanValue
-   cout << "booleanValue is " << booleanValue;
+   // ask user to enter point
+   cout << "Enter a point in the form (x, y):\n";
+   cin >> pt; // store user entered point
 
-   // display booleanValue after using boolalpha
-   cout << "\nbooleanValue (after using boolalpha) is "
-      << boolalpha << booleanValue;
-
-   cout << "\n\nswitch booleanValue and use noboolalpha\n";
-   booleanValue = false; // change booleanValue
-   cout << noboolalpha; // use noboolalpha
-
-   // display default false booleanValue after using noboolalpha
-   cout << "\nbooleanValue is " << booleanValue;
-   
-
-   // display booleanValue after using boolalpha again
-   cout << "\nbooleanValue (after using boolalpha) is "
-      << boolalpha << booleanValue << endl;
-}
-
+   if (!cin.fail()) { // validate input
+      cout << "Point entered was: " << pt << endl; // display point
+   }
+   else {
+      cout << "\nInvalid data\n"; // tell user invalid data was entered
+   }
+} 
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
