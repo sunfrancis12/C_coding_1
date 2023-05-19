@@ -51,7 +51,7 @@ HugeInteger HugeInteger::operator+(const HugeInteger& op2) const {
 }
 
 // addition operator; HugeInteger + int
-HugeInteger HugeInteger::operator+(int op2) const {
+HugeInteger HugeInteger::operator+(int op2) const { // a + b a=*this , b= op2
    // convert op2 to a HugeInteger, then invoke 
    // operator+ for two HugeInteger objects
    return *this + HugeInteger(op2);
@@ -68,11 +68,6 @@ HugeInteger HugeInteger::operator+(const string& op2) const {
 HugeInteger HugeInteger::operator*(const HugeInteger& op2){
 
    HugeInteger temp; // temporary result
-   HugeInteger a; //被乘數
-   HugeInteger b; //乘數
-
-   int num = 0;
-   int carry = 0;
 
    for(HugeInteger i{1}; i <= op2;i = i + 1 ){
       temp = temp + *this;
