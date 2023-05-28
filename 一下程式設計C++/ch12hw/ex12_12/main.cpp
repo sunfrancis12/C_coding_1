@@ -22,6 +22,14 @@ int main()
 
    double count = 0;
 
+   for( Package * package : vec){
+      
+   }
+
+   for(int i=0; i< vec.size();i++){
+      
+   }
+
    for(int i=0;i<=2;i++){
       cout<<"Package "<<i+1<<":\n"<<endl;
       cout<<"Sender:\n"<< vec[i] -> getSenderAddress()<<endl;
