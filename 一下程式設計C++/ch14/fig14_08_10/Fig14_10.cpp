@@ -1,22 +1,29 @@
-// Exercise 13.15 Solution: Point.h
-#ifndef POINT_H
-#define POINT_H
-
+// Fig. 14.10: Fig14_10.cpp
+// Creating a randomly accessed file.
 #include <iostream>
+#include <fstream>  
+#include <cstdlib> 
+#include "ClientData.h" // ClientData class definition
 using namespace std;
 
-class Point 
-{
-   // overloaded input and output operators
-   friend ostream &operator<<(ostream&, const Point&);
-   friend istream &operator>>(istream&, Point&);
+int main() {
+   ofstream outCredit{"credit.dat", ios::out | ios::binary};
 
-private:
-   int xCoordinate; // x-coordinate of point pair
-   int yCoordinate; // y-coordinate of point pair
-}; 
+   // exit program if ofstream could not open file
+   if (!outCredit) {
+      cerr << "File could not be opened." << endl;
+      exit(EXIT_FAILURE);
+   } 
 
-#endif
+   ClientData blankClient; // constructor zeros out each data member
+
+   // output 100 blank records to file
+   for (int i{0}; i < 100; ++i) {
+      outCredit.write(                                                    
+         reinterpret_cast<const char*>(&blankClient), sizeof(ClientData));
+   }   
+} 
+
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
