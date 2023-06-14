@@ -10,7 +10,7 @@ int main() {
    ofstream outCredit{"credit.dat", ios::out | ios::binary};
 
    // exit program if ofstream could not open file
-   if (!outCredit) {
+   if (!outCredit) { 
       cerr << "File could not be opened." << endl;
       exit(EXIT_FAILURE);
    } 

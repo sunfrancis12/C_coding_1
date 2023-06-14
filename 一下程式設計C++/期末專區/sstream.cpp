@@ -3,16 +3,36 @@
 #include<sstream>
 using namespace std;
 
-int main(){
 
+class Man{
+
+public:
+
+Man(string x,int y){
+    name = x;
+    age = y;
+}
+
+string tostring(){
     stringstream ss;
     string str;
 
-    ss << 100 << " " << 6;
+    cout<<name<<" "<<age<<endl;
 
-    ss >> str;
+    ss << "Name: "<<name<<" Age:"<<age;
+    return ss.str();
+}
 
-    cout<<str;
+string name;
+int age;
+
+};
+
+int main(){
+
+    Man one("Ben",50);
+
+    cout<<one.tostring();
 
 }
 
