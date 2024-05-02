@@ -24,7 +24,7 @@ int main() {
    BasePlusCommissionEmployee basePlusCommissionEmployee{
       "Bob", "Lewis", "444-44-4444", 5000, .04, 300};
 
-   // output each Employee’s information and earnings using static binding
+   // output each Employeeï¿½s information and earnings using static binding
    cout << "EMPLOYEES PROCESSED INDIVIDUALLY USING STATIC BINDING\n"
       << salariedEmployee.toString()
       << "\nearned $" << salariedEmployee.earnings() << "\n\n"
@@ -33,6 +33,8 @@ int main() {
       << basePlusCommissionEmployee.toString()
       << "\nearned $" << basePlusCommissionEmployee.earnings() << "\n\n";
 
+   
+   //re
    // create and initialize vector of three base-class pointers        
    vector<Employee *> employees{&salariedEmployee, &commissionEmployee,
       &basePlusCommissionEmployee};
